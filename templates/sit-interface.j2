@@ -1,0 +1,12 @@
+auto {{ tunnelbroker_interface_name }}
+iface {{ tunnelbroker_interface_name }} inet6 v4tunnel
+        address {{ tunnelbroker_interface_address }}
+        netmask {{ tunnelbroker_interface_netmask }}
+        endpoint {{ tunnelbroker_interface_endpoint }}
+        local {{ tunnelbroker_interface_local }}
+        ttl {{ tunnelbroker_interface_ttl }}
+        gateway {{ tunnelbroker_interface_gateway }}
+
+{% for line in tunnelbroker_extra_configuration %}
+{{ line }}
+{% endfor %}

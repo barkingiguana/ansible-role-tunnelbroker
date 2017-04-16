@@ -1,0 +1,12 @@
+---
+- name: Configure IPv6 tunnel
+  become: yes
+  template:
+    dest: /etc/network/interfaces.d/{{ tunnelbroker_interface_name }}
+    src: templates/sit-interface.j2
+
+- name: Bring up tunnel
+  become: yes
+  shell: ifup {{ tunnelbroker_interface_name }}
+  when:
+    - "{{ tunnelbroker_manage_service }}"

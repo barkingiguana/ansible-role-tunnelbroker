@@ -1,0 +1,10 @@
+---
+tunnelbroker_interface_name: sit0
+tunnelbroker_interface_address: 2001:470:1f1c:51d::2
+tunnelbroker_interface_netmask: 64
+tunnelbroker_interface_endpoint: 216.66.88.98
+tunnelbroker_interface_local: "{{ ansible_default_ipv4.address }}"
+tunnelbroker_interface_ttl: 255
+tunnelbroker_interface_gateway: 2001:470:1f1c:51d::1
+tunnelbroker_extra_configuration: []
+tunnelbroker_manage_service: yes
